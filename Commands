@@ -1,0 +1,25 @@
+To create path:
+$ mkdir turtlebot3
+$ cd ~/turtlebot3/
+$ mkdir src
+$ catkin_workspace src
+$ cd src
+
+Download & Install Turtlebot3:
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3.git
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_autorace.git
+$ cd ..
+$ rosdep install --from-paths src -i -y
+$ catkin_make
+$ rospack profile
+
+Model Config:
+$ echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
+$ source ~/.bashrc
+
+
+Test Launch:
+$ source devel/setup.bash
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
